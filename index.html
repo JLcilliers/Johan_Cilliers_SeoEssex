@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FSE Digital: AI-Enhanced Business Transformation Strategy</title>
+    <link rel="stylesheet" href="proposal-assistant.css">
     <style>
         * {
             margin: 0;
@@ -1178,5 +1179,101 @@
         </div>
 
     </div>
+
+    <!-- Proposal Assistant Chatbot Widget -->
+    <div id="fse-chat-widget" class="chat-widget">
+        <!-- Chat Toggle Button -->
+        <button id="chat-toggle" class="chat-toggle" aria-label="Open Proposal Assistant">
+            <svg class="chat-icon" viewBox="0 0 24 24" width="28" height="28">
+                <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+            </svg>
+            <span class="chat-badge">AI</span>
+        </button>
+
+        <!-- Chat Container -->
+        <div id="chat-container" class="chat-container hidden">
+            <!-- Chat Header -->
+            <div class="chat-header">
+                <div class="header-content">
+                    <div class="header-title">
+                        <span class="ai-indicator">🤖</span>
+                        <h3>FSE Proposal Assistant</h3>
+                    </div>
+                    <button id="chat-close" class="chat-close" aria-label="Close chat">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="header-disclaimer">
+                    AI Assistant - Proposal Information Only
+                </div>
+            </div>
+
+            <!-- Chat Messages Area -->
+            <div id="chat-messages" class="chat-messages">
+                <!-- Welcome Message -->
+                <div class="message assistant-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <p>Hello! I'm your AI assistant for understanding FSE Digital's transformation strategy.</p>
+                        <p>I can explain our ROI projections, implementation timeline, tool recommendations, and answer any questions about the proposal.</p>
+                        <p>What would you like to know?</p>
+                    </div>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="quick-actions">
+                    <button class="quick-action" data-question="How do you achieve 70-130% ROI?">
+                        📊 Show ROI Calculation
+                    </button>
+                    <button class="quick-action" data-question="What are the implementation phases?">
+                        📅 Implementation Timeline
+                    </button>
+                    <button class="quick-action" data-question="What AI tools do you recommend?">
+                        🛠️ Tool Recommendations
+                    </button>
+                    <button class="quick-action" data-question="What are the department-specific benefits?">
+                        💼 Department Benefits
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chat-input-container">
+                <div class="typing-indicator hidden" id="typing-indicator">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <form id="chat-form" class="chat-form">
+                    <input 
+                        type="text" 
+                        id="chat-input" 
+                        class="chat-input" 
+                        placeholder="Ask about our transformation strategy..."
+                        aria-label="Type your question"
+                        autocomplete="off"
+                        maxlength="500"
+                    />
+                    <button type="submit" class="chat-submit" aria-label="Send message">
+                        <svg viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </button>
+                </form>
+                <div class="input-footer">
+                    <small>For negotiations or detailed discussions, please <a href="mailto:contact@fsedigital.com">contact our team</a></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accessibility Announcements -->
+    <div id="chat-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Load Configuration and Scripts -->
+    <script src="proposal-knowledge-base.js"></script>
+    <script src="proposal-assistant.js"></script>
 </body>
 </html>
